@@ -1,6 +1,3 @@
-
-
-
 <h1> Nelly Sorteador </h1>
 
 <h2> 📋 Descrição </h2>
