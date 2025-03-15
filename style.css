@@ -4,35 +4,36 @@
     box-sizing: border-box;
 }
 
-
-
-
 body {
-    height: 100vh;
+    min-height: 100vh;
     background-color: black;
-
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-
 main {
-    display: grid;
-    justify-items: center;
-    justify-content: space-around;
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
 }
 
 img {
-    align-items: center;
-width: 250px;
-margin: 50px auto;
+    width: 200px;
+    max-width: 100%;
+    height: auto;
+    margin: 30px auto;
 }
-
 
 h1 {
     text-align: center;
     color: rgba(255, 0, 0, 0.985);
-    font-size: 50px;
-    margin: 20px;
+    font-size: 40px;
+    margin: 20px 0;
     border-right: 2px solid #000;
     padding-right: 2px;
     animation: blink 0.7s infinite;
@@ -44,34 +45,137 @@ h1 {
     }
 }
 
+div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
 
 input {
     outline: none;
-    width: 200px;
-    height: 30px;
-    margin: 20px;
+    width: 90%;
+    max-width: 300px;
+    height: 40px;
+    margin: 10px 0;
     border-color: rgb(255, 0, 0);
+    border-radius: 5px;
     font-weight: bold;
     text-align: center;
+    padding: 5px;
+    font-size: 16px;
 }
 
-.draw-button{
+.draw-button {
     font-weight: bold;
     text-align: center;
-    width: 200px;
-    height: 30px;
-    margin: 20px;
-    border-color: rgb(255, 0, 0); 
+    width: 90%;
+    max-width: 300px;
+    height: 40px;
+    margin: 20px 0;
+    border-color: rgb(255, 0, 0);
+    border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
 }
 
-.draw-button:hover, input:hover{
-background-color: black;
-color: red;
+.draw-button:hover, input:hover {
+    background-color: black;
+    color: red;
 }
 
 #result {
-    cursor: default; /* Muda o cursor para o padrão em vez do cursor de texto */
-    user-select: all; /* Permite selecionar o número com um clique, caso queira copiar */
+    cursor: default;
+    user-select: all;
+    font-size: 30px;
+    min-height: 40px;
+    margin-top: 20px;
+    padding: 10px;
+    text-align: center;
+    color: red;
 }
 
+/* Media queries para diferentes tamanhos de tela */
+
+/* Para telas muito pequenas (celulares pequenos) */
+@media (max-width: 320px) {
+    h1 {
+        font-size: 30px;
+    }
+    
+    img {
+        width: 150px;
+        margin: 20px auto;
+    }
+    
+    input, .draw-button {
+        height: 35px;
+        font-size: 14px;
+    }
+    
+    #result {
+        font-size: 24px;
+    }
+}
+
+/* Para tablets e celulares na horizontal */
+@media (min-width: 768px) {
+    div {
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    input {
+        width: 45%;
+        margin: 10px 0;
+    }
+    
+    h1 {
+        font-size: 45px;
+    }
+}
+
+/* Para notebooks e telas médias */
+@media (min-width: 1024px) {
+    h1 {
+        font-size: 50px;
+    }
+    
+    .draw-button {
+        transition: transform 0.2s;
+    }
+    
+    .draw-button:hover {
+        transform: scale(1.05);
+    }
+    
+    img {
+        width: 220px;
+    }
+}
+
+/* Para telas grandes (desktops) */
+@media (min-width: 1440px) {
+    main {
+        max-width: 800px;
+    }
+    
+    h1 {
+        font-size: 55px;
+    }
+    
+    img {
+        width: 250px;
+    }
+    
+    input, .draw-button {
+        font-size: 18px;
+        height: 45px;
+    }
+    
+    #result {
+        font-size: 36px;
+    }
+}
