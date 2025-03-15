@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+body {
+    height: 100vh;
+    background-color: black;
+
+}
+
+
+main {
+    display: grid;
+    justify-items: center;
+    justify-content: space-around;
+
+}
+
+img {
+    align-items: center;
+width: 250px;
+margin: 50px auto;
+}
+
+
+h1 {
+    text-align: center;
+    color: rgba(255, 0, 0, 0.985);
+    font-size: 50px;
+    margin: 20px;
+    border-right: 2px solid #000;
+    padding-right: 2px;
+    animation: blink 0.7s infinite;
+} 
+
+@keyframes blink {
+    50% {
+        border-right-color: transparent;
+    }
+}
+
+
+input {
+    outline: none;
+    width: 200px;
+    height: 30px;
+    margin: 20px;
+    border-color: rgb(255, 0, 0);
+    font-weight: bold;
+    text-align: center;
+}
+
+.draw-button{
+    font-weight: bold;
+    text-align: center;
+    width: 200px;
+    height: 30px;
+    margin: 20px;
+    border-color: rgb(255, 0, 0); 
+    cursor: pointer;
+}
+
+.draw-button:hover, input:hover{
+background-color: black;
+color: red;
+}
+
+#result {
+    cursor: default; /* Muda o cursor para o padrão em vez do cursor de texto */
+    user-select: all; /* Permite selecionar o número com um clique, caso queira copiar */
+}
+
